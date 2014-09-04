@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B21053BD19A8D44D008DE5F4 /* PlayingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B21053BC19A8D44D008DE5F4 /* PlayingViewController.m */; };
 		B214A27E1998C060002A29BD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B214A27D1998C060002A29BD /* Foundation.framework */; };
 		B214A2801998C060002A29BD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B214A27F1998C060002A29BD /* CoreGraphics.framework */; };
 		B214A2821998C060002A29BD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B214A2811998C060002A29BD /* UIKit.framework */; };
@@ -14,7 +15,6 @@
 		B214A28A1998C060002A29BD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B214A2891998C060002A29BD /* main.m */; };
 		B214A28E1998C060002A29BD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B214A28D1998C060002A29BD /* AppDelegate.m */; };
 		B214A2911998C060002A29BD /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B214A28F1998C060002A29BD /* Main_iPhone.storyboard */; };
-		B214A2941998C060002A29BD /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B214A2921998C060002A29BD /* Main_iPad.storyboard */; };
 		B214A2971998C060002A29BD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B214A2961998C060002A29BD /* ViewController.m */; };
 		B214A2991998C060002A29BD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B214A2981998C060002A29BD /* Images.xcassets */; };
 		B214A2A01998C060002A29BD /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B214A29F1998C060002A29BD /* XCTest.framework */; };
@@ -40,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B21053BB19A8D44D008DE5F4 /* PlayingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayingViewController.h; sourceTree = "<group>"; };
+		B21053BC19A8D44D008DE5F4 /* PlayingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayingViewController.m; sourceTree = "<group>"; };
 		B214A27A1998C060002A29BD /* CardsPlayGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardsPlayGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B214A27D1998C060002A29BD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B214A27F1998C060002A29BD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -51,7 +53,6 @@
 		B214A28C1998C060002A29BD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B214A28D1998C060002A29BD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		B214A2901998C060002A29BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		B214A2931998C060002A29BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		B214A2951998C060002A29BD /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		B214A2961998C060002A29BD /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		B214A2981998C060002A29BD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -130,10 +131,11 @@
 			isa = PBXGroup;
 			children = (
 				B214A28F1998C060002A29BD /* Main_iPhone.storyboard */,
-				B214A2B8199907FD002A29BD /* Model */,
-				B214A2921998C060002A29BD /* Main_iPad.storyboard */,
 				B214A2951998C060002A29BD /* ViewController.h */,
 				B214A2961998C060002A29BD /* ViewController.m */,
+				B21053BB19A8D44D008DE5F4 /* PlayingViewController.h */,
+				B21053BC19A8D44D008DE5F4 /* PlayingViewController.m */,
+				B214A2B8199907FD002A29BD /* Model */,
 				B214A2981998C060002A29BD /* Images.xcassets */,
 				B214A2841998C060002A29BD /* Supporting Files */,
 			);
@@ -264,7 +266,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B214A2941998C060002A29BD /* Main_iPad.storyboard in Resources */,
 				B214A2991998C060002A29BD /* Images.xcassets in Resources */,
 				B214A2911998C060002A29BD /* Main_iPhone.storyboard in Resources */,
 				B214A2881998C060002A29BD /* InfoPlist.strings in Resources */,
@@ -287,6 +288,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B214A2C4199A1BD2002A29BD /* IntsanceDeck.m in Sources */,
+				B21053BD19A8D44D008DE5F4 /* PlayingViewController.m in Sources */,
 				B214A2BB199A0919002A29BD /* Deck.m in Sources */,
 				B214A2971998C060002A29BD /* ViewController.m in Sources */,
 				B214A2BE199A0F8D002A29BD /* InstanceCard.m in Sources */,
@@ -330,14 +332,6 @@
 				B214A2901998C060002A29BD /* Base */,
 			);
 			name = Main_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		B214A2921998C060002A29BD /* Main_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B214A2931998C060002A29BD /* Base */,
-			);
-			name = Main_iPad.storyboard;
 			sourceTree = "<group>";
 		};
 		B214A2A81998C060002A29BD /* InfoPlist.strings */ = {
@@ -435,6 +429,7 @@
 				GCC_PREFIX_HEADER = "CardsPlayGame/CardsPlayGame-Prefix.pch";
 				INFOPLIST_FILE = "CardsPlayGame/CardsPlayGame-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -449,6 +444,7 @@
 				GCC_PREFIX_HEADER = "CardsPlayGame/CardsPlayGame-Prefix.pch";
 				INFOPLIST_FILE = "CardsPlayGame/CardsPlayGame-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

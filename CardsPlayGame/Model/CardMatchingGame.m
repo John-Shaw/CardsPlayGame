@@ -82,17 +82,18 @@
             
             self.matchDetail = [self.matchDetail stringByAppendingFormat:@"%@ ",card.contents];
             
-            int i = 0;
+//            int i = 0;
+            
             for (Card *otherCard in self.cards) {
                 if (otherCard.isChosen && !otherCard.isMatched) {
                     
                     [otherCards addObject:otherCard];
                     self.matchDetail = [self.matchDetail stringByAppendingFormat:@"%@ ",otherCard.contents];
-                    
-                    i++;
-                    if (i >= self.matchNumber) {
-                        break;
-                    }
+//                    
+//                    i++;
+//                    if (i >= self.matchNumber) {
+//                        break;
+//                    }
                 }
             }
             if ([otherCards count] == self.matchNumber) {
