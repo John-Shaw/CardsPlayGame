@@ -7,6 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "InstanceDeck.h"
 
 @interface CardsPlayGameTests : XCTestCase
 
@@ -28,7 +29,11 @@
 
 - (void)testExample
 {
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+    
+    InstanceDeck *deck = [[InstanceDeck alloc] init];
+    XCTAssertEqual([deck drawRandomCard].class, [Card class] , @"draw a card");
 }
 
 @end
+
+

@@ -7,14 +7,14 @@
 //
 
 
-#import "InstanceCard.h"
+#import "MatchisomCard.h"
 
-@interface InstanceCard ()
+@interface MatchisomCard ()
 
 @end
 
 
-@implementation InstanceCard
+@implementation MatchisomCard
 
 @synthesize suit=_suit;
 
@@ -26,8 +26,8 @@
     int score = 0;
     if ([otherCards count] == 1) {
         id card = [otherCards firstObject];
-        if([card isKindOfClass:[InstanceCard class]]){
-            InstanceCard *otherCard = (InstanceCard *)card;
+        if([card isKindOfClass:[MatchisomCard class]]){
+            MatchisomCard *otherCard = (MatchisomCard *)card;
             if (otherCard.rank == self.rank) {
                 score = RANK_MATCH_SCORE;
             }else if([otherCard.suit isEqualToString:self.suit]){
@@ -36,8 +36,8 @@
         }
     } else {
         for (id card in otherCards) {
-            if ([card isKindOfClass:[InstanceCard class]]) {
-                InstanceCard *otherCard = (InstanceCard *)card;
+            if ([card isKindOfClass:[MatchisomCard class]]) {
+                MatchisomCard *otherCard = (MatchisomCard *)card;
                 if (otherCard.rank == self.rank) {
                     score += RANK_MATCH_SCORE;
                 } else if ([otherCard.suit isEqualToString:self.suit]){
@@ -52,7 +52,7 @@
 
 -(NSString *)contents{
     
-    NSArray *rankStrings = [InstanceCard rankStrings];
+    NSArray *rankStrings = [MatchisomCard rankStrings];
     return [rankStrings[self.rank] stringByAppendingString:self.suit];
     
 }
@@ -70,7 +70,7 @@
 }
 
 - (void)setRank:(NSUInteger)rank{
-    if (rank <= [InstanceCard maxRank]) {
+    if (rank <= [MatchisomCard maxRank]) {
         _rank = rank;
     }
 }
@@ -78,7 +78,7 @@
 - (void)setSuit:(NSString *)suit{
     
 
-    if ( [[InstanceCard validSuits] containsObject:suit]) {
+    if ( [[MatchisomCard validSuits] containsObject:suit]) {
         _suit = suit;
     }
 }

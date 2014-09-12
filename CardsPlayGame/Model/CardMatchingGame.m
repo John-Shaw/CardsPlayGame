@@ -12,7 +12,7 @@
 
 @property (nonatomic,readwrite) NSInteger score;
 @property (nonatomic,strong) NSMutableArray *cards;
-@property (nonatomic,readwrite) NSUInteger matchNumber;
+@property (nonatomic,readwrite) NSUInteger matchNumberOfOtherCards;
 
 
 @end
@@ -29,11 +29,11 @@
     return _cards;
 }
 
-- (NSUInteger)matchNumber{
-    if (!_matchNumber) {
-        _matchNumber = 1;
+- (NSUInteger)matchNumberOfOtherCards{
+    if (!_matchNumberOfOtherCards) {
+        _matchNumberOfOtherCards = 1;
     }
-    return _matchNumber;
+    return _matchNumberOfOtherCards;
 }
 
 - (instancetype)initWithCount:(NSUInteger)count usingDeck:(Deck *)deck{
@@ -61,7 +61,7 @@
 
 
 - (void)setModeWithCardMatchNumber:(NSUInteger)number{
-    self.matchNumber = number;
+    self.matchNumberOfOtherCards = number;
 }
 
 #define MISMATCH_PENALTY 2
@@ -73,30 +73,24 @@
     Card *card = [self cardAtIndex:index];
     NSMutableArray *otherCards = [[NSMutableArray alloc] init];
     
-    self.matchDetail = @"";
+    
     if (!card.isMatched) {
         if (card.isChosen) {
-            self.matchDetail = @"";
+            self.matchDetail = [@"lay down " stringByAppendingString:card.contents];
             card.chosen = NO;
         }else{
+            self.matchDetail = [@"pick up " stringByAppendingString:card.contents];
             
-            self.matchDetail = [self.matchDetail stringByAppendingFormat:@"%@ ",card.contents];
-            
-//            int i = 0;
             
             for (Card *otherCard in self.cards) {
                 if (otherCard.isChosen && !otherCard.isMatched) {
                     
                     [otherCards addObject:otherCard];
                     self.matchDetail = [self.matchDetail stringByAppendingFormat:@"%@ ",otherCard.contents];
-//                    
-//                    i++;
-//                    if (i >= self.matchNumber) {
-//                        break;
-//                    }
                 }
             }
-            if ([otherCards count] == self.matchNumber) {
+            
+            if ([otherCards count] == self.matchNumberOfOtherCards) {
                 unsigned long matchScore = [card match:otherCards];
                 if (matchScore) {
                     self.score +=matchScore * MATCH_BONUS;
@@ -116,8 +110,8 @@
                     self.matchDetail = [self.matchDetail stringByAppendingFormat:@"don’t match! %d points penalty!",MISMATCH_PENALTY];
                 }
             }
-            
 
+            
             self.score -= COST_TO_CHOOSE;
             card.chosen = YES;
         }

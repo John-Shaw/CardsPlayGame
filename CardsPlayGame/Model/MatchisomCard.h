@@ -8,7 +8,7 @@
 
 #import "Card.h"
 
-@interface InstanceCard : Card
+@interface MatchisomCard : Card
 
 @property (strong,nonatomic) NSString *suit;
 @property (nonatomic)NSUInteger rank;

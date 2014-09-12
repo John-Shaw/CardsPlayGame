@@ -10,7 +10,7 @@
 #import "MatchisomDeck.h"
 
 @interface MatchisomViewController ()
-
+@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
 @end
 
 @implementation MatchisomViewController

@@ -7,16 +7,20 @@
 //
 
 #import "SetViewController.h"
-#import "MatchisomDeck.h"
+#import "SetDeck.h"
+
+//for fast test
+#import "SetCard.h"
 
 @interface SetViewController ()
-
+@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
 @end
 
 @implementation SetViewController
 
+
 - (Deck *)createDeck{
-    return [[MatchisomDeck alloc] init];
+    return [[SetDeck alloc] init];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -28,16 +32,22 @@
     return self;
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
+- (IBAction)touchCardButton:(id)sender{
+    UIButton *button = (UIButton *)sender;
+    unsigned long cardIndex = [self.cardButtons indexOfObject:sender];
+    Card *card = [self.game cardAtIndex:cardIndex];
+    [button setTitle:card.contents forState:UIControlStateNormal];
+    SetCard *setcard = (SetCard *)card;
+    [button setTitleColor:setcard.color forState:UIControlStateNormal];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+- (IBAction)touchStartButton:(id)sender{
+    NSLog(@"touch start button");
+}
+
+- (void)updateUI{
+    NSLog(@"update ui");
 }
 
 /*

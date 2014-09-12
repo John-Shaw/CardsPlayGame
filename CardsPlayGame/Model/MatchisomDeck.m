@@ -6,10 +6,10 @@
 //  Copyright (c) 2014年 John Shaw. All rights reserved.
 //
 
-#import "InstanceDeck.h"
-#import "InstanceCard.h"
+#import "MatchisomDeck.h"
+#import "MatchisomCard.h"
 
-@implementation InstanceDeck
+@implementation MatchisomDeck
 
 - (instancetype)init{
     
@@ -17,9 +17,9 @@
     if(!self)
         return nil;
     
-    for (NSString *suit in [InstanceCard validSuits]) {
-        for(NSUInteger rank = 1; rank <=[InstanceCard maxRank];rank++){
-            InstanceCard *card = [[InstanceCard alloc] init];
+    for (NSString *suit in [MatchisomCard validSuits]) {
+        for(NSUInteger rank = 1; rank <=[MatchisomCard maxRank];rank++){
+            MatchisomCard *card = [[MatchisomCard alloc] init];
             card.rank = rank;
             card.suit = suit;
             [self addCard:card];

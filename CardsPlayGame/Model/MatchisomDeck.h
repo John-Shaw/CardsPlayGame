@@ -8,6 +8,6 @@
 
 #import "Deck.h"
 
-@interface InstanceDeck : Deck
+@interface MatchisomDeck : Deck
 
 @end
