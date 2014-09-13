@@ -51,7 +51,7 @@
             }
         }
     }
-    
+    self.matchNumberOfOtherCards  = 1;
     return self;
 }
 
@@ -60,9 +60,6 @@
 }
 
 
-- (void)setModeWithCardMatchNumber:(NSUInteger)number{
-    self.matchNumberOfOtherCards = number;
-}
 
 #define MISMATCH_PENALTY 2
 #define MATCH_BONUS 4

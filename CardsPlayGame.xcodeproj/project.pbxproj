@@ -23,6 +23,8 @@
 		B214A2BE199A0F8D002A29BD /* MatchisomCard.m in Sources */ = {isa = PBXBuildFile; fileRef = B214A2BD199A0F8D002A29BD /* MatchisomCard.m */; };
 		B214A2C4199A1BD2002A29BD /* MatchisomDeck.m in Sources */ = {isa = PBXBuildFile; fileRef = B214A2C3199A1BD2002A29BD /* MatchisomDeck.m */; };
 		B214A2C7199A487B002A29BD /* CardMatchingGame.m in Sources */ = {isa = PBXBuildFile; fileRef = B214A2C6199A487B002A29BD /* CardMatchingGame.m */; };
+		B24D674519C2953B009AFBF2 /* DrawSetCard(Attribute).m in Sources */ = {isa = PBXBuildFile; fileRef = B24D674419C2953B009AFBF2 /* DrawSetCard(Attribute).m */; };
+		B24D674819C2DA04009AFBF2 /* SetGame.m in Sources */ = {isa = PBXBuildFile; fileRef = B24D674719C2DA04009AFBF2 /* SetGame.m */; };
 		B297D43719BAE5840048FF35 /* SetDeck.m in Sources */ = {isa = PBXBuildFile; fileRef = B297D43619BAE5840048FF35 /* SetDeck.m */; };
 		B297D44019BAE61B0048FF35 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B297D43B19BAE61B0048FF35 /* GameViewController.m */; };
 		B297D44119BAE61B0048FF35 /* MatchisomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B297D43D19BAE61B0048FF35 /* MatchisomViewController.m */; };
@@ -58,6 +60,10 @@
 		B214A2C3199A1BD2002A29BD /* MatchisomDeck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MatchisomDeck.m; path = Model/MatchisomDeck.m; sourceTree = "<group>"; };
 		B214A2C5199A487B002A29BD /* CardMatchingGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardMatchingGame.h; path = Model/CardMatchingGame.h; sourceTree = "<group>"; };
 		B214A2C6199A487B002A29BD /* CardMatchingGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardMatchingGame.m; path = Model/CardMatchingGame.m; sourceTree = "<group>"; };
+		B24D674319C2953B009AFBF2 /* DrawSetCard(Attribute).h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "DrawSetCard(Attribute).h"; path = "Model/DrawSetCard(Attribute).h"; sourceTree = "<group>"; };
+		B24D674419C2953B009AFBF2 /* DrawSetCard(Attribute).m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "DrawSetCard(Attribute).m"; path = "Model/DrawSetCard(Attribute).m"; sourceTree = "<group>"; };
+		B24D674619C2DA04009AFBF2 /* SetGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SetGame.h; path = Model/SetGame.h; sourceTree = "<group>"; };
+		B24D674719C2DA04009AFBF2 /* SetGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SetGame.m; path = Model/SetGame.m; sourceTree = "<group>"; };
 		B297D43519BAE5840048FF35 /* SetDeck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SetDeck.h; path = Model/SetDeck.h; sourceTree = "<group>"; };
 		B297D43619BAE5840048FF35 /* SetDeck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SetDeck.m; path = Model/SetDeck.m; sourceTree = "<group>"; };
 		B297D43A19BAE61B0048FF35 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
@@ -171,6 +177,8 @@
 			children = (
 				B214A2C5199A487B002A29BD /* CardMatchingGame.h */,
 				B214A2C6199A487B002A29BD /* CardMatchingGame.m */,
+				B24D674619C2DA04009AFBF2 /* SetGame.h */,
+				B24D674719C2DA04009AFBF2 /* SetGame.m */,
 				B214A2B5199907CC002A29BD /* Card.h */,
 				B214A2B6199907CC002A29BD /* Card.m */,
 				B214A2B9199A0919002A29BD /* Deck.h */,
@@ -183,6 +191,8 @@
 				B297D43619BAE5840048FF35 /* SetDeck.m */,
 				B297D44319BAE9B70048FF35 /* SetCard.h */,
 				B297D44419BAE9B70048FF35 /* SetCard.m */,
+				B24D674319C2953B009AFBF2 /* DrawSetCard(Attribute).h */,
+				B24D674419C2953B009AFBF2 /* DrawSetCard(Attribute).m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -291,6 +301,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B24D674819C2DA04009AFBF2 /* SetGame.m in Sources */,
 				B214A2C4199A1BD2002A29BD /* MatchisomDeck.m in Sources */,
 				B214A2BB199A0919002A29BD /* Deck.m in Sources */,
 				B297D44519BAE9B70048FF35 /* SetCard.m in Sources */,
@@ -299,6 +310,7 @@
 				B297D44119BAE61B0048FF35 /* MatchisomViewController.m in Sources */,
 				B297D44019BAE61B0048FF35 /* GameViewController.m in Sources */,
 				B214A28E1998C060002A29BD /* AppDelegate.m in Sources */,
+				B24D674519C2953B009AFBF2 /* DrawSetCard(Attribute).m in Sources */,
 				B214A28A1998C060002A29BD /* main.m in Sources */,
 				B297D44219BAE61B0048FF35 /* SetViewController.m in Sources */,
 				B214A2B7199907CC002A29BD /* Card.m in Sources */,

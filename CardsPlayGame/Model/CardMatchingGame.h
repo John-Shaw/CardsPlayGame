@@ -17,8 +17,6 @@
 
 - (void)chooseCardAtIndex:(NSUInteger)index;
 
-- (void)setModeWithCardMatchNumber:(NSUInteger)number;
-
 - (Card *)cardAtIndex:(NSUInteger)index;
 
 @property (nonatomic,readonly) NSInteger score;

@@ -10,10 +10,11 @@
 #import "SetDeck.h"
 
 //for fast test
-#import "SetCard.h"
+#import "DrawSetCard(Attribute).h"
 
 @interface SetViewController ()
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
+
 @end
 
 @implementation SetViewController
@@ -36,9 +37,7 @@
     UIButton *button = (UIButton *)sender;
     unsigned long cardIndex = [self.cardButtons indexOfObject:sender];
     Card *card = [self.game cardAtIndex:cardIndex];
-    [button setTitle:card.contents forState:UIControlStateNormal];
-    SetCard *setcard = (SetCard *)card;
-    [button setTitleColor:setcard.color forState:UIControlStateNormal];
+    [button setAttributedTitle:[DrawSetCard_Attribute_ setCardContent:card] forState:UIControlStateNormal];
 }
 
 
