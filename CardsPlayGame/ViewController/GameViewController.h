@@ -15,7 +15,9 @@
 @interface GameViewController : UIViewController
 
 - (Deck *)createDeck;  //abstract
+- (CardMatchingGame *)createGame;
 - (void)updateUI;
+
 @property (nonatomic,strong) CardMatchingGame *game;
 
 @end

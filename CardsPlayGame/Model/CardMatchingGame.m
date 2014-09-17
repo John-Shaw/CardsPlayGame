@@ -10,10 +10,6 @@
 
 @interface CardMatchingGame ()
 
-@property (nonatomic,readwrite) NSInteger score;
-@property (nonatomic,strong) NSMutableArray *cards;
-@property (nonatomic,readwrite) NSUInteger matchNumberOfOtherCards;
-
 
 @end
 
@@ -36,7 +32,7 @@
     return _matchNumberOfOtherCards;
 }
 
-- (instancetype)initWithCount:(NSUInteger)count usingDeck:(Deck *)deck{
+- (instancetype)initWithCount:(NSUInteger)count usingDeck:(Deck *)deck cardNumber:(NSUInteger)matchNumberOfOtherCards{
     self = [super init];
     if (self) {
         for (int i = 0; i < count; i++) {
@@ -51,7 +47,7 @@
             }
         }
     }
-    self.matchNumberOfOtherCards  = 1;
+    self.matchNumberOfOtherCards = matchNumberOfOtherCards;
     return self;
 }
 

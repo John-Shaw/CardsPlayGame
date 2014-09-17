@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *ScoreLabel;
 @property (weak, nonatomic) IBOutlet UILabel *DetailLabel;
 
+
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
 
 @end
@@ -24,13 +25,14 @@
 
 - (CardMatchingGame *)game{
     if (!_game) {
-        _game = [[CardMatchingGame alloc] initWithCount:[self.cardButtons count]
-                                              usingDeck:[self createDeck]];
-    
+        _game = [self createGame];
     }
     return _game;
 }
 
+- (CardMatchingGame *)createGame{
+    return nil;
+}
 
 
 - (Deck *)createDeck{   //abstract

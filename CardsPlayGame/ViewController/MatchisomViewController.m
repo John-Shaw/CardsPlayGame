@@ -19,6 +19,12 @@
     return [[MatchisomDeck alloc] init];
 }
 
+- (CardMatchingGame *)createGame{
+    return [[CardMatchingGame alloc] initWithCount:[self.cardButtons count]
+                                         usingDeck:[self createDeck]
+                                        cardNumber:1];
+}
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

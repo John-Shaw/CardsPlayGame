@@ -13,15 +13,20 @@
 
 #pragma mark designated initializer
 - (instancetype)initWithCount:(NSUInteger)count
-                    usingDeck:(Deck *)deck;
+                    usingDeck:(Deck *)deck
+                   cardNumber:(NSUInteger)matchNumberOfOtherCards;
 
 - (void)chooseCardAtIndex:(NSUInteger)index;
 
 - (Card *)cardAtIndex:(NSUInteger)index;
 
-@property (nonatomic,readonly) NSInteger score;
+@property (nonatomic,readwrite) NSUInteger score;
+
 @property (nonatomic,strong) NSString *matchDetail;
 
+@property (nonatomic,strong) NSMutableArray *cards;
+
+@property (nonatomic,readwrite) NSUInteger matchNumberOfOtherCards;
 
 
 @end

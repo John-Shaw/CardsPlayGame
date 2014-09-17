@@ -10,15 +10,26 @@
 #import "SetDeck.h"
 
 //for fast test
+@class SetCard;
 #import "DrawSetCard(Attribute).h"
+#import "SetGame.h"
 
 @interface SetViewController ()
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
+
+@property (weak, nonatomic) IBOutlet UILabel *MatchInfo;
+
 
 @end
 
 @implementation SetViewController
 
+- (CardMatchingGame *)createGame{
+    return [[SetGame alloc] initWithCount:[self.cardButtons count]
+                                usingDeck:[self createDeck]
+                                cardNumber:2];
+
+}
 
 - (Deck *)createDeck{
     return [[SetDeck alloc] init];
@@ -28,25 +39,48 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+
     }
     return self;
 }
 
+- (void)viewDidLoad{
+    [super viewDidLoad];
+    for (UIButton *button in self.cardButtons) {
+        unsigned long cardIndex = [self.cardButtons indexOfObject:button];
+        SetCard *card = (SetCard *)[self.game cardAtIndex:cardIndex];
+        [button setAttributedTitle:[DrawSetCard_Attribute_ setCardContent:card] forState:UIControlStateNormal];
+    }
+}
+
 - (IBAction)touchCardButton:(id)sender{
-    UIButton *button = (UIButton *)sender;
+
     unsigned long cardIndex = [self.cardButtons indexOfObject:sender];
-    Card *card = [self.game cardAtIndex:cardIndex];
-    [button setAttributedTitle:[DrawSetCard_Attribute_ setCardContent:card] forState:UIControlStateNormal];
+//    SetCard *card = (SetCard *)[self.game cardAtIndex:cardIndex];
+//    [button setAttributedTitle:[DrawSetCard_Attribute_ setCardContent:card] forState:UIControlStateNormal];
+    
+    [self.game chooseCardAtIndex:cardIndex];
+    [self updateUI];
 }
 
 
 - (IBAction)touchStartButton:(id)sender{
-    NSLog(@"touch start button");
+
 }
 
 - (void)updateUI{
-    NSLog(@"update ui");
+    for (UIButton *button in self.cardButtons) {
+        Card *card = [self.game cardAtIndex:[self.cardButtons indexOfObject:button]];
+        if(card.isChosen)
+        {
+            [button setBackgroundColor:[UIColor lightGrayColor]];
+        }
+        else{
+            [button setBackgroundColor:[UIColor whiteColor]];
+        }
+    }
+    [self.MatchInfo setText:[NSString stringWithFormat:@"%@", self.game.matchDetail]];
+    
 }
 
 /*

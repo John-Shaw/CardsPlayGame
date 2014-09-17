@@ -18,9 +18,8 @@
                           NSStrokeColorAttributeName: setcard.color};
     }
     if ([setcard.shading isEqualToString:@"striped"]) {
-        attributeName = @{NSStrokeWidthAttributeName: @-3,
-                          NSStrokeColorAttributeName: setcard.color,
-                          NSForegroundColorAttributeName: setcard.color};
+        attributeName = @{NSStrokeWidthAttributeName: @15,
+                          NSStrokeColorAttributeName: setcard.color};
 
     }
     if ([setcard.shading isEqualToString:@"solid"]) {

@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CardsPlayGame/Model/DrawSetCard(Attribute).m"
-            timestampString = "432184080.994934"
+            timestampString = "432473365.406637"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
             landmarkName = "+setCardContent:"
             landmarkType = "5">
          </BreakpointContent>
