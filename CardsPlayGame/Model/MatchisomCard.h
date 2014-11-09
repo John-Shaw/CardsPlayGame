@@ -7,11 +7,13 @@
 //
 
 #import "Card.h"
+#import "PlayingCardView.h"
 
 @interface MatchisomCard : Card
 
 @property (strong,nonatomic) NSString *suit;
 @property (nonatomic)NSUInteger rank;
+@property (strong, nonatomic) PlayingCardView *view;
 
 + (NSArray *)validSuits;
 + (NSUInteger)maxRank;

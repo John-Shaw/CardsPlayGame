@@ -7,7 +7,7 @@
 //
 
 #import "MatchisomDeck.h"
-#import "MatchisomCard.h"
+
 
 @implementation MatchisomDeck
 
@@ -22,6 +22,8 @@
             MatchisomCard *card = [[MatchisomCard alloc] init];
             card.rank = rank;
             card.suit = suit;
+//            card.view.rank = rank;
+//            card.view.suit = suit;
             [self addCard:card];
         }
     }

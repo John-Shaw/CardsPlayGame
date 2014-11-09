@@ -2,12 +2,16 @@
   "images" : [
     {
       "idiom" : "universal",
-      "scale" : "1x",
-      "filename" : "Haruhi with white-1.png"
+      "scale" : "1x"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
+      "filename" : "Haruhi with white-1.png"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x",
       "filename" : "Haruhi with white.png"
     }
   ],

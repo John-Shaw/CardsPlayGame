@@ -6,8 +6,8 @@
 //  Copyright (c) 2014年 John Shaw. All rights reserved.
 //
 
-#import "CardMatchingGame.h"
+#import "Game.h"
 
-@interface SetGame : CardMatchingGame
+@interface SetGame : Game
 
 @end

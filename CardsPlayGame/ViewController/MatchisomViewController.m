@@ -8,29 +8,24 @@
 
 #import "MatchisomViewController.h"
 #import "MatchisomDeck.h"
+#import "PlayingCardView.h"
+
 
 @interface MatchisomViewController ()
-@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
+
 @end
 
 @implementation MatchisomViewController
 
-- (Deck *)createDeck{
-    return [[MatchisomDeck alloc] init];
-}
 
-- (CardMatchingGame *)createGame{
-    return [[CardMatchingGame alloc] initWithCount:[self.cardButtons count]
-                                         usingDeck:[self createDeck]
-                                        cardNumber:1];
-}
-
+#pragma mark - initailizetion - setters and getters
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-
+        
+        
         // Custom initialization
     }
     return self;
@@ -39,25 +34,79 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    // Do any additional setup after loading the view.
+    
+    //测试下card view
+    //    for(int i=1;i<4;i++){
+    //    MatchisomDeck *deck = [[MatchisomDeck alloc] init];
+    //    MatchisomCard *card = (MatchisomCard *)[deck drawRandomCard];
+    //
+    //    PlayingCardView *cardTest = card.view;
+    //
+    //    cardTest.frame = CGRectMake(70*(i-1) + 20, 50, 60, 90);
+    //    UISwipeGestureRecognizer *swipe = [[UISwipeGestureRecognizer alloc] initWithTarget:cardTest action:@selector(flipCard:)];
+    //    [swipe setDirection:UISwipeGestureRecognizerDirectionRight];
+    //
+    //    [cardTest addGestureRecognizer:swipe];
+    //
+    //    [self.view addSubview:cardTest];
+    //    }
+    
 }
 
-- (void)didReceiveMemoryWarning
+- (Deck *)createDeck{
+    return [[MatchisomDeck alloc] init];
+}
+
+@synthesize cardViews = _cardViews;
+- (NSMutableArray *)cardViews
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    if (!_cardViews) {
+        _cardViews = [NSMutableArray arrayWithCapacity:self.numberOfCards];
+        for (MatchisomCard *card in self.game.cards) {
+            UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                                                  action:@selector(flipCard:)];
+            [card.view addGestureRecognizer:tap];
+            
+            [_cardViews addObject:card.view];
+        }
+    }
+    return _cardViews;
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+
+#pragma mark - gesture callbacks and animations
+- (void)flipCard:(UITapGestureRecognizer *)gesture{
+    
+    PlayingCardView *cardView = (PlayingCardView *)gesture.view;
+    [cardView flipCardAnimation];
+    
+    [self.game chooseCardAtIndex:[self.cardViews indexOfObject:cardView]];
+    [self updateUI];
 }
-*/
+
+
+
+
+- (void)updateUI{
+    [super updateUI];
+    for (MatchisomCard *card in self.game.cards) {
+        if (card.matched) {
+            [card.view removeGestureRecognizer:card.view.gestureRecognizers.firstObject];
+            [UIView animateWithDuration:0.5
+                                  delay:0.5
+                                options:UIViewAnimationOptionBeginFromCurrentState
+                             animations:^{
+                                 card.view.alpha = 0.5;
+                             }completion:NULL];
+            
+            
+        }
+//        if (card) {
+//
+//        }
+    }
+}
+
 
 @end

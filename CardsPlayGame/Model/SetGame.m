@@ -10,15 +10,14 @@
 
 @interface SetGame ()
 
-
-
 @end
 
 @implementation SetGame
-@synthesize matchNumberOfOtherCards=_matchNumberOfOtherCards;
+
+
 
 - (void)chooseCardAtIndex:(NSUInteger)index{
-    Card *card = [self cardAtIndex:index];
+    Card *card = self.cards[index];
     NSMutableArray *otherCards = [[NSMutableArray alloc] init];
     
     if (!card.isMatched) {

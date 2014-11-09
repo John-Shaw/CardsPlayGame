@@ -7,6 +7,7 @@
 //
 
 #import "Deck.h"
+#import "MatchisomCard.h"
 
 @interface MatchisomDeck : Deck
 

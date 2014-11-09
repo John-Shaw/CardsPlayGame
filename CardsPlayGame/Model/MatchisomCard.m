@@ -16,12 +16,15 @@
 
 @implementation MatchisomCard
 
-@synthesize suit=_suit;
-
+@synthesize suit = _suit;
+@synthesize chosen = _chosen;
 
 #define RANK_MATCH_SCORE 4
 #define SUIT_MATCH_SCORE 1
 
+/** 卡牌匹配算法
+ * @param otherCards 其他卡牌的集合
+ */
 -(NSUInteger)match:(NSArray *)otherCards{
     int score = 0;
     if ([otherCards count] == 1) {
@@ -50,6 +53,7 @@
     return score;
 }
 
+#pragma mark - for security
 -(NSString *)contents{
     
     NSArray *rankStrings = [MatchisomCard rankStrings];
@@ -69,17 +73,23 @@
     return [[self rankStrings] count] -1;
 }
 
+
+#pragma mark - getter setter
 - (void)setRank:(NSUInteger)rank{
     if (rank <= [MatchisomCard maxRank]) {
         _rank = rank;
+        
+        //我懂了，我是从_view而不是self.view中获取属性，_view此时尚未alloc init，self.view是调用getter方法
+        
+        //我本想在setter中同时设置view的rank等属性，但现实是这些属性为nil，当然这些操作放到deck中即可正常运转，但不够优雅，待debug
+        self.view.rank = rank;
     }
 }
 
 - (void)setSuit:(NSString *)suit{
-    
-
     if ( [[MatchisomCard validSuits] containsObject:suit]) {
         _suit = suit;
+        self.view.suit = suit;
     }
 }
 
@@ -87,6 +97,19 @@
     return _suit ? _suit : @"?";
 }
 
+- (void)setChosen:(BOOL)chosen{
+    _chosen = chosen;
+    if (self.view.faceUP != chosen && self.view.faceUP == YES) {
+//        [self.view flipCardAnimation];
+        [self.view performSelector:@selector(flipCardAnimation) withObject:nil afterDelay:1.0];
+    }
+}
 
+- (PlayingCardView *)view{
+    if (!_view) {
+        _view = [[PlayingCardView alloc] init];
+    }
+    return _view;
+}
 
 @end
