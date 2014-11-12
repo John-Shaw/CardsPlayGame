@@ -7,8 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		521C02461A10B33000489052 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 521C02451A10B33000489052 /* libz.dylib */; };
+		5226EEC41A0F6BDF0008C90E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5226EEC31A0F6BDF0008C90E /* AVFoundation.framework */; };
+		5226EEC61A0F6BF20008C90E /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5226EEC51A0F6BF20008C90E /* AddressBook.framework */; };
+		5226EEC81A0F6C010008C90E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5226EEC71A0F6C010008C90E /* SystemConfiguration.framework */; };
+		5226EECA1A0F6C0F0008C90E /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5226EEC91A0F6C0F0008C90E /* AudioToolbox.framework */; };
+		5226EEDB1A0F755B0008C90E /* SBJson4Parser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5226EECE1A0F755B0008C90E /* SBJson4Parser.m */; };
+		5226EEDC1A0F755B0008C90E /* SBJson4StreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5226EED01A0F755B0008C90E /* SBJson4StreamParser.m */; };
+		5226EEDD1A0F755B0008C90E /* SBJson4StreamParserState.m in Sources */ = {isa = PBXBuildFile; fileRef = 5226EED21A0F755B0008C90E /* SBJson4StreamParserState.m */; };
+		5226EEDE1A0F755B0008C90E /* SBJson4StreamTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5226EED41A0F755B0008C90E /* SBJson4StreamTokeniser.m */; };
+		5226EEDF1A0F755B0008C90E /* SBJson4StreamWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5226EED61A0F755B0008C90E /* SBJson4StreamWriter.m */; };
+		5226EEE01A0F755B0008C90E /* SBJson4StreamWriterState.m in Sources */ = {isa = PBXBuildFile; fileRef = 5226EED81A0F755B0008C90E /* SBJson4StreamWriterState.m */; };
+		5226EEE11A0F755B0008C90E /* SBJson4Writer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5226EEDA1A0F755B0008C90E /* SBJson4Writer.m */; };
+		5226EEE41A0FA2BC0008C90E /* SetCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5226EEE31A0FA2BC0008C90E /* SetCardView.m */; };
+		5226EEE81A10ADCC0008C90E /* iflyMSC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5226EEE71A10ADCC0008C90E /* iflyMSC.framework */; };
 		5296CB141A03C377003DA480 /* PlayingCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5296CB131A03C377003DA480 /* PlayingCardView.m */; };
 		52C44AFB1A090D3B003724DE /* Grid.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C44AFA1A090D3B003724DE /* Grid.m */; };
+		52DB16AE1A124552007DCDC9 /* AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52DB16A91A124552007DCDC9 /* AlertView.m */; };
+		52DB16AF1A124552007DCDC9 /* PopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52DB16AB1A124552007DCDC9 /* PopupView.m */; };
+		52DB16B01A124552007DCDC9 /* UIPlaceHolderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52DB16AD1A124552007DCDC9 /* UIPlaceHolderTextView.m */; };
 		52FAF4C61A0B12D1006E5C45 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 52FAF4C51A0B12D1006E5C45 /* Game.m */; };
 		52FAF4C91A0B13B1006E5C45 /* MatchisomGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 52FAF4C81A0B13B1006E5C45 /* MatchisomGame.m */; };
 		B214A27E1998C060002A29BD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B214A27D1998C060002A29BD /* Foundation.framework */; };
@@ -37,10 +54,40 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		521C02431A10B07500489052 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		521C02451A10B33000489052 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		5226EEC31A0F6BDF0008C90E /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		5226EEC51A0F6BF20008C90E /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		5226EEC71A0F6C010008C90E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		5226EEC91A0F6C0F0008C90E /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		5226EECC1A0F755B0008C90E /* SBJson4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJson4.h; sourceTree = "<group>"; };
+		5226EECD1A0F755B0008C90E /* SBJson4Parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJson4Parser.h; sourceTree = "<group>"; };
+		5226EECE1A0F755B0008C90E /* SBJson4Parser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJson4Parser.m; sourceTree = "<group>"; };
+		5226EECF1A0F755B0008C90E /* SBJson4StreamParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJson4StreamParser.h; sourceTree = "<group>"; };
+		5226EED01A0F755B0008C90E /* SBJson4StreamParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJson4StreamParser.m; sourceTree = "<group>"; };
+		5226EED11A0F755B0008C90E /* SBJson4StreamParserState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJson4StreamParserState.h; sourceTree = "<group>"; };
+		5226EED21A0F755B0008C90E /* SBJson4StreamParserState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJson4StreamParserState.m; sourceTree = "<group>"; };
+		5226EED31A0F755B0008C90E /* SBJson4StreamTokeniser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJson4StreamTokeniser.h; sourceTree = "<group>"; };
+		5226EED41A0F755B0008C90E /* SBJson4StreamTokeniser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJson4StreamTokeniser.m; sourceTree = "<group>"; };
+		5226EED51A0F755B0008C90E /* SBJson4StreamWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJson4StreamWriter.h; sourceTree = "<group>"; };
+		5226EED61A0F755B0008C90E /* SBJson4StreamWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJson4StreamWriter.m; sourceTree = "<group>"; };
+		5226EED71A0F755B0008C90E /* SBJson4StreamWriterState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJson4StreamWriterState.h; sourceTree = "<group>"; };
+		5226EED81A0F755B0008C90E /* SBJson4StreamWriterState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJson4StreamWriterState.m; sourceTree = "<group>"; };
+		5226EED91A0F755B0008C90E /* SBJson4Writer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJson4Writer.h; sourceTree = "<group>"; };
+		5226EEDA1A0F755B0008C90E /* SBJson4Writer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJson4Writer.m; sourceTree = "<group>"; };
+		5226EEE21A0FA2BC0008C90E /* SetCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetCardView.h; sourceTree = "<group>"; };
+		5226EEE31A0FA2BC0008C90E /* SetCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetCardView.m; sourceTree = "<group>"; };
+		5226EEE71A10ADCC0008C90E /* iflyMSC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iflyMSC.framework; path = lib/iflyMSC.framework; sourceTree = "<group>"; };
 		5296CB121A03C377003DA480 /* PlayingCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayingCardView.h; sourceTree = "<group>"; };
 		5296CB131A03C377003DA480 /* PlayingCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayingCardView.m; sourceTree = "<group>"; };
 		52C44AF91A090D3B003724DE /* Grid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Grid.h; sourceTree = "<group>"; };
 		52C44AFA1A090D3B003724DE /* Grid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Grid.m; sourceTree = "<group>"; };
+		52DB16A81A124552007DCDC9 /* AlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertView.h; sourceTree = "<group>"; };
+		52DB16A91A124552007DCDC9 /* AlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertView.m; sourceTree = "<group>"; };
+		52DB16AA1A124552007DCDC9 /* PopupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopupView.h; sourceTree = "<group>"; };
+		52DB16AB1A124552007DCDC9 /* PopupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopupView.m; sourceTree = "<group>"; };
+		52DB16AC1A124552007DCDC9 /* UIPlaceHolderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIPlaceHolderTextView.h; sourceTree = "<group>"; };
+		52DB16AD1A124552007DCDC9 /* UIPlaceHolderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIPlaceHolderTextView.m; sourceTree = "<group>"; };
 		52FAF4C41A0B12D1006E5C45 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Game.h; path = Model/Game.h; sourceTree = "<group>"; };
 		52FAF4C51A0B12D1006E5C45 /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Game.m; path = Model/Game.m; sourceTree = "<group>"; };
 		52FAF4C71A0B13B1006E5C45 /* MatchisomGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MatchisomGame.h; path = Model/MatchisomGame.h; sourceTree = "<group>"; };
@@ -90,6 +137,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				521C02461A10B33000489052 /* libz.dylib in Frameworks */,
+				5226EEE81A10ADCC0008C90E /* iflyMSC.framework in Frameworks */,
+				5226EECA1A0F6C0F0008C90E /* AudioToolbox.framework in Frameworks */,
+				5226EEC81A0F6C010008C90E /* SystemConfiguration.framework in Frameworks */,
+				5226EEC61A0F6BF20008C90E /* AddressBook.framework in Frameworks */,
+				5226EEC41A0F6BDF0008C90E /* AVFoundation.framework in Frameworks */,
 				B214A2801998C060002A29BD /* CoreGraphics.framework in Frameworks */,
 				B214A2821998C060002A29BD /* UIKit.framework in Frameworks */,
 				B214A27E1998C060002A29BD /* Foundation.framework in Frameworks */,
@@ -109,6 +162,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5226EECB1A0F755B0008C90E /* SBJson */ = {
+			isa = PBXGroup;
+			children = (
+				5226EECC1A0F755B0008C90E /* SBJson4.h */,
+				5226EECD1A0F755B0008C90E /* SBJson4Parser.h */,
+				5226EECE1A0F755B0008C90E /* SBJson4Parser.m */,
+				5226EECF1A0F755B0008C90E /* SBJson4StreamParser.h */,
+				5226EED01A0F755B0008C90E /* SBJson4StreamParser.m */,
+				5226EED11A0F755B0008C90E /* SBJson4StreamParserState.h */,
+				5226EED21A0F755B0008C90E /* SBJson4StreamParserState.m */,
+				5226EED31A0F755B0008C90E /* SBJson4StreamTokeniser.h */,
+				5226EED41A0F755B0008C90E /* SBJson4StreamTokeniser.m */,
+				5226EED51A0F755B0008C90E /* SBJson4StreamWriter.h */,
+				5226EED61A0F755B0008C90E /* SBJson4StreamWriter.m */,
+				5226EED71A0F755B0008C90E /* SBJson4StreamWriterState.h */,
+				5226EED81A0F755B0008C90E /* SBJson4StreamWriterState.m */,
+				5226EED91A0F755B0008C90E /* SBJson4Writer.h */,
+				5226EEDA1A0F755B0008C90E /* SBJson4Writer.m */,
+			);
+			path = SBJson;
+			sourceTree = "<group>";
+		};
 		5296CB151A03C8C2003DA480 /* GameController */ = {
 			isa = PBXGroup;
 			children = (
@@ -131,17 +206,32 @@
 			name = Grid;
 			sourceTree = "<group>";
 		};
+		52DB16A71A124532007DCDC9 /* iFlyViews */ = {
+			isa = PBXGroup;
+			children = (
+				52DB16A81A124552007DCDC9 /* AlertView.h */,
+				52DB16A91A124552007DCDC9 /* AlertView.m */,
+				52DB16AA1A124552007DCDC9 /* PopupView.h */,
+				52DB16AB1A124552007DCDC9 /* PopupView.m */,
+				52DB16AC1A124552007DCDC9 /* UIPlaceHolderTextView.h */,
+				52DB16AD1A124552007DCDC9 /* UIPlaceHolderTextView.m */,
+			);
+			name = iFlyViews;
+			sourceTree = "<group>";
+		};
 		52FAF4CA1A0BA0F3006E5C45 /* Card */ = {
 			isa = PBXGroup;
 			children = (
-				5296CB121A03C377003DA480 /* PlayingCardView.h */,
-				5296CB131A03C377003DA480 /* PlayingCardView.m */,
 				B214A2B5199907CC002A29BD /* Card.h */,
 				B214A2B6199907CC002A29BD /* Card.m */,
 				B214A2BC199A0F8D002A29BD /* MatchisomCard.h */,
 				B214A2BD199A0F8D002A29BD /* MatchisomCard.m */,
+				5296CB121A03C377003DA480 /* PlayingCardView.h */,
+				5296CB131A03C377003DA480 /* PlayingCardView.m */,
 				B297D44319BAE9B70048FF35 /* SetCard.h */,
 				B297D44419BAE9B70048FF35 /* SetCard.m */,
+				5226EEE21A0FA2BC0008C90E /* SetCardView.h */,
+				5226EEE31A0FA2BC0008C90E /* SetCardView.m */,
 				B24D674319C2953B009AFBF2 /* DrawSetCard(Attribute).h */,
 				B24D674419C2953B009AFBF2 /* DrawSetCard(Attribute).m */,
 			);
@@ -164,6 +254,8 @@
 		B214A2711998C060002A29BD = {
 			isa = PBXGroup;
 			children = (
+				52DB16A71A124532007DCDC9 /* iFlyViews */,
+				5226EECB1A0F755B0008C90E /* SBJson */,
 				B214A2831998C060002A29BD /* CardsPlayGame */,
 				B214A2A51998C060002A29BD /* CardsPlayGameTests */,
 				B214A27C1998C060002A29BD /* Frameworks */,
@@ -183,6 +275,13 @@
 		B214A27C1998C060002A29BD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				521C02451A10B33000489052 /* libz.dylib */,
+				521C02431A10B07500489052 /* CFNetwork.framework */,
+				5226EEE71A10ADCC0008C90E /* iflyMSC.framework */,
+				5226EEC91A0F6C0F0008C90E /* AudioToolbox.framework */,
+				5226EEC71A0F6C010008C90E /* SystemConfiguration.framework */,
+				5226EEC51A0F6BF20008C90E /* AddressBook.framework */,
+				5226EEC31A0F6BDF0008C90E /* AVFoundation.framework */,
 				B214A27D1998C060002A29BD /* Foundation.framework */,
 				B214A27F1998C060002A29BD /* CoreGraphics.framework */,
 				B214A2811998C060002A29BD /* UIKit.framework */,
@@ -349,20 +448,31 @@
 			buildActionMask = 2147483647;
 			files = (
 				52FAF4C61A0B12D1006E5C45 /* Game.m in Sources */,
+				52DB16AE1A124552007DCDC9 /* AlertView.m in Sources */,
 				B24D674819C2DA04009AFBF2 /* SetGame.m in Sources */,
+				52DB16B01A124552007DCDC9 /* UIPlaceHolderTextView.m in Sources */,
+				5226EEDE1A0F755B0008C90E /* SBJson4StreamTokeniser.m in Sources */,
+				5226EEDC1A0F755B0008C90E /* SBJson4StreamParser.m in Sources */,
 				B214A2C4199A1BD2002A29BD /* MatchisomDeck.m in Sources */,
 				B214A2BB199A0919002A29BD /* Deck.m in Sources */,
 				B297D44519BAE9B70048FF35 /* SetCard.m in Sources */,
 				5296CB141A03C377003DA480 /* PlayingCardView.m in Sources */,
 				B214A2BE199A0F8D002A29BD /* MatchisomCard.m in Sources */,
 				52C44AFB1A090D3B003724DE /* Grid.m in Sources */,
+				5226EEE11A0F755B0008C90E /* SBJson4Writer.m in Sources */,
 				B297D44119BAE61B0048FF35 /* MatchisomViewController.m in Sources */,
 				B297D44019BAE61B0048FF35 /* GameViewController.m in Sources */,
 				52FAF4C91A0B13B1006E5C45 /* MatchisomGame.m in Sources */,
 				B214A28E1998C060002A29BD /* AppDelegate.m in Sources */,
+				5226EEE01A0F755B0008C90E /* SBJson4StreamWriterState.m in Sources */,
+				5226EEDB1A0F755B0008C90E /* SBJson4Parser.m in Sources */,
+				5226EEDD1A0F755B0008C90E /* SBJson4StreamParserState.m in Sources */,
 				B24D674519C2953B009AFBF2 /* DrawSetCard(Attribute).m in Sources */,
+				5226EEE41A0FA2BC0008C90E /* SetCardView.m in Sources */,
 				B214A28A1998C060002A29BD /* main.m in Sources */,
+				5226EEDF1A0F755B0008C90E /* SBJson4StreamWriter.m in Sources */,
 				B297D44219BAE61B0048FF35 /* SetViewController.m in Sources */,
+				52DB16AF1A124552007DCDC9 /* PopupView.m in Sources */,
 				B214A2B7199907CC002A29BD /* Card.m in Sources */,
 				B297D43719BAE5840048FF35 /* SetDeck.m in Sources */,
 			);
@@ -482,12 +592,18 @@
 		B214A2B01998C060002A29BD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: WEIFENG HOU (EXT82G9Z85)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/lib",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CardsPlayGame/CardsPlayGame-Prefix.pch";
 				INFOPLIST_FILE = "CardsPlayGame/CardsPlayGame-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
@@ -497,12 +613,18 @@
 		B214A2B11998C060002A29BD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: WEIFENG HOU (EXT82G9Z85)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/lib",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CardsPlayGame/CardsPlayGame-Prefix.pch";
 				INFOPLIST_FILE = "CardsPlayGame/CardsPlayGame-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;

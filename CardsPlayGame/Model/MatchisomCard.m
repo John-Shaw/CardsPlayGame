@@ -99,6 +99,7 @@
 
 - (void)setChosen:(BOOL)chosen{
     _chosen = chosen;
+    
     if (self.view.faceUP != chosen && self.view.faceUP == YES) {
 //        [self.view flipCardAnimation];
         [self.view performSelector:@selector(flipCardAnimation) withObject:nil afterDelay:1.0];

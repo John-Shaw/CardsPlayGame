@@ -8,6 +8,7 @@
 
 #import "SetCard.h"
 
+//dropped
 @interface DrawSetCard_Attribute_ : NSObject  
 
 + (NSAttributedString *)setCardContent: (SetCard *)setcard;

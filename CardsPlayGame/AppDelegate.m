@@ -7,11 +7,19 @@
 //
 
 #import "AppDelegate.h"
+//#import "iflyMSC/IFlySpeechUtility.h"
+
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+//    //创建语音配置,appid必须要传入，仅执行一次则可
+//    NSString *initString = [[NSString alloc] initWithFormat:@"appid=%@,timeout=%@",@"545ee11c",@"20000"];
+//    
+//    //所有服务启动前，需要确保执行createUtility
+//    [IFlySpeechUtility createUtility:initString];
+    
     // Override point for customization after application launch.
     return YES;
 }

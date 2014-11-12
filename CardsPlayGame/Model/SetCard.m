@@ -11,27 +11,47 @@
 @implementation SetCard
 
 + (NSArray *)validSymbol{
-    return @[@"♦︎",@"■",@"●"];
+     return @[@"oval", @"squiggle", @"diamond"];
 }
 
 + (NSArray *)validColor{
-    return @[[UIColor redColor],[UIColor greenColor],[UIColor purpleColor]];
+    return @[@"red", @"green", @"purple"];
 }
 
 + (NSArray *)validShading{
     return @[@"open",@"striped",@"solid"];
 }
 
-+ (NSArray *)validNumber{
-    return @[@1,@2,@3];
++ (NSUInteger)maxNumber{
+    return 3;
 }
 
--(NSString *)contents{
-    NSString *content = [[NSString alloc] init];
-    for (int i = 0; i < self.number; i++) {
-        content = [content stringByAppendingString:self.symbol];
+//content 应该改为修改相应的信息，如3个红色空心方块等等，但是想想也没必要，因为可以从另外四个property中获取，而绘图交给setcardview
+//-(NSString *)contents{
+//    NSString *content = [[NSString alloc] init];
+//    for (int i = 0; i < self.number; i++) {
+//        content = [content stringByAppendingString:self.symbol];
+//    }
+//    return content;
+//}
+
+@synthesize chosen = _chosen;
+- (void)setChosen:(BOOL)chosen{
+    
+    _chosen = chosen;
+    if(self.view.chosen != chosen && self.view.chosen == YES){
+        [self.view performSelector:@selector(setChosen:) withObject:@0 afterDelay:0.5f];
     }
-    return content;
+    else{
+        self.view.chosen = chosen;
+    }
+}
+
+- (SetCardView *)view{
+    if (!_view) {
+        _view = [SetCardView new];
+    }
+    return _view;
 }
 
 static const int numberOfMatchingCards = 3;
@@ -49,8 +69,10 @@ static const int numberOfMatchingCards = 3;
         [symbols addObject:self.symbol];
         [shadings addObject:self.shading];
         [numbers addObject:@(self.number)];
+        
         for (id otherCard in otherCards) {
             if ([otherCard isKindOfClass:[SetCard class]]) {
+                
                 SetCard *otherSetCard = (SetCard *)otherCard;
                 if (![colors containsObject:otherSetCard.color])
                     [colors addObject:otherSetCard.color];
@@ -67,8 +89,9 @@ static const int numberOfMatchingCards = 3;
                     score = 4;
                 }
             }
-        }}
-    
+            
+        }
+    }
     
     return score;
 }

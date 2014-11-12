@@ -19,10 +19,7 @@
     return [self.cards count];
 }
 
-- (NSString *)matchDetail{
-    if (!_matchDetail) _matchDetail = [[NSString alloc] init];
-    return _matchDetail;
-}
+
 
 - (NSMutableArray *)cards{
     if(!_cards) _cards = [[NSMutableArray alloc] init];
@@ -76,23 +73,16 @@
     //惰性实例化
     Card *card = self.cards[index];
     if (!card.isMatched) {
-
         if (card.isChosen) {
-//            self.matchDetail = [@"lay down " stringByAppendingString:card.contents];
             card.chosen = NO;
-            
         }else{
-//            self.matchDetail = [@"pick up " stringByAppendingString:card.contents]
-            
+       
             //#1
             //search other cards, beacouse now self card not chosen
             NSMutableArray *otherCards = [[NSMutableArray alloc] init];
             for (Card *otherCard in self.cards) {
-                
                 if (otherCard.isChosen && !otherCard.isMatched) {
                     [otherCards addObject:otherCard];
-                    
-//                    self.matchDetail = [self.matchDetail stringByAppendingFormat:@"%@ ",otherCard.contents];
                 }
             }
             card.chosen = YES;
@@ -110,7 +100,7 @@
                         otherCard.matched = YES;
                     }
                     
-//                    self.matchDetail = [self.matchDetail stringByAppendingFormat:@"for %lu points",matchScore * MATCH_BONUS];
+
                 }else{
                     
                     self.score -= MISMATCH_PENALTY;
@@ -120,7 +110,7 @@
                     }
                     //此处修改，即如果匹配不成功，chosen设为false，牌（如果能）会翻过去
                     card.chosen = NO;
-//                    self.matchDetail = [self.matchDetail stringByAppendingFormat:@"don’t match! %d points penalty!",MISMATCH_PENALTY];
+
                 }
             }
             

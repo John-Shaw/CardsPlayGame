@@ -8,8 +8,9 @@
 
 #import "MatchisomViewController.h"
 #import "MatchisomDeck.h"
-#import "PlayingCardView.h"
 
+//#import "iflyMSC/IFlySpeechRecognizerDelegate.h"
+//#import "iflyMSC/IFlySpeechRecognizer.h"
 
 @interface MatchisomViewController ()
 
@@ -34,22 +35,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    //测试下card view
-    //    for(int i=1;i<4;i++){
-    //    MatchisomDeck *deck = [[MatchisomDeck alloc] init];
-    //    MatchisomCard *card = (MatchisomCard *)[deck drawRandomCard];
-    //
-    //    PlayingCardView *cardTest = card.view;
-    //
-    //    cardTest.frame = CGRectMake(70*(i-1) + 20, 50, 60, 90);
-    //    UISwipeGestureRecognizer *swipe = [[UISwipeGestureRecognizer alloc] initWithTarget:cardTest action:@selector(flipCard:)];
-    //    [swipe setDirection:UISwipeGestureRecognizerDirectionRight];
-    //
-    //    [cardTest addGestureRecognizer:swipe];
-    //
-    //    [self.view addSubview:cardTest];
-    //    }
     
 }
 
@@ -83,6 +68,7 @@
     
     [self.game chooseCardAtIndex:[self.cardViews indexOfObject:cardView]];
     [self updateUI];
+    
 }
 
 
@@ -102,9 +88,7 @@
             
             
         }
-//        if (card) {
-//
-//        }
+
     }
 }
 

@@ -16,51 +16,48 @@
 
 
 
-- (void)chooseCardAtIndex:(NSUInteger)index{
-    Card *card = self.cards[index];
-    NSMutableArray *otherCards = [[NSMutableArray alloc] init];
-    
-    if (!card.isMatched) {
-        if (card.isChosen) {
-            card.chosen = NO;
-        }else{
-            
-            
-            for (Card *otherCard in self.cards) {
-                if (otherCard.isChosen && !otherCard.isMatched) {
-                    
-                    [otherCards addObject:otherCard];
-                }
-            }
-            self.matchDetail = @"Come on!";
-            if ([otherCards count] == self.matchNumberOfOtherCards) {
-                unsigned long matchScore = [card match:otherCards];
-                if (matchScore) {
-                    self.score +=matchScore * 10;
-                    card.matched = YES;
-                    for (Card *otherCard in otherCards) {
-                        otherCard.matched = YES;
-                    }
-                    self.matchDetail = @"Yes!";
-
-                }else{
-                    self.score -= 1;
-                    
-                    for (Card *otherCard in otherCards) {
-                        otherCard.chosen = NO;
-                    }
-                    self.matchDetail = @"No!";
-                    
-                }
-            }
-            
-            self.score -= 1;
-            card.chosen = YES;
-            
-        }
-    }
-
-}
+//- (void)chooseCardAtIndex:(NSUInteger)index{
+//    
+//    Card *card = self.cards[index];
+//    if (!card.isMatched) {
+//        if (card.isChosen) {
+//            card.chosen = NO;
+//        }else{
+//            
+//            NSMutableArray *otherCards = [[NSMutableArray alloc] init];
+//            for (Card *otherCard in self.cards) {
+//                if (otherCard.isChosen && !otherCard.isMatched) {
+//                    
+//                    [otherCards addObject:otherCard];
+//                }
+//            }
+//
+//            card.chosen = YES;
+//            if ([otherCards count] == self.matchNumberOfOtherCards) {
+//                unsigned long matchScore = [card match:otherCards];
+//                if (matchScore) {
+//                    self.score += matchScore * 10;
+//                    card.matched = YES;
+//                    for (Card *otherCard in otherCards) {
+//                        otherCard.matched = YES;
+//                    }
+//
+//                }else{
+//                    self.score -= 1;
+//                    
+//                    for (Card *otherCard in otherCards) {
+//                        otherCard.chosen = NO;
+//                    }
+//                    card.chosen = NO;
+//                }
+//            }
+//            
+//            self.score -= 1;
+//            
+//        }
+//    }
+//
+//}
 
 
 @end

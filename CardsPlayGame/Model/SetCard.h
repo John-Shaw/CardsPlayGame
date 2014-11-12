@@ -7,17 +7,20 @@
 //
 
 #import "Card.h"
+#import "SetCardView.h"
 
 @interface SetCard : Card
 
 @property (nonatomic) NSUInteger number;
 @property (nonatomic,strong) NSString *symbol;
-@property (nonatomic,strong) UIColor *color;
+@property (nonatomic,strong) NSString *color;
 @property (nonatomic,strong) NSString *shading;
+
+@property (nonatomic,strong) SetCardView *view;
 
 + (NSArray *)validSymbol;
 + (NSArray *)validColor;
 + (NSArray *)validShading;
-+ (NSArray *)validNumber;
++ (NSUInteger)maxNumber;
 
 @end

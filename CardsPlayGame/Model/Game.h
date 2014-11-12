@@ -22,7 +22,7 @@
 
 #pragma mark - properties
 @property (nonatomic,readwrite) NSUInteger score;
-@property (nonatomic,strong) NSString *matchDetail;
+
 @property (nonatomic,strong) NSMutableArray *cards;
 @property (nonatomic) NSInteger numberOfDealtCards;
 //TODO 这里可能不需要matchnumber了，直接固定类型

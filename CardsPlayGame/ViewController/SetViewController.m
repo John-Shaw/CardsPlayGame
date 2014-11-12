@@ -10,8 +10,8 @@
 #import "SetDeck.h"
 
 //for fast test
-@class SetCard;
-#import "DrawSetCard(Attribute).h"
+//@class SetCard;
+//#import "DrawSetCard(Attribute).h"
 #import "SetGame.h"
 
 @interface SetViewController ()
@@ -28,6 +28,15 @@
     return [[SetDeck alloc] init];
 }
 
+@synthesize game = _game;
+- (Game *)game{
+    if (!_game) {
+        _game = [[SetGame alloc] initWithCount:self.numberOfCards usingDeck:[self createDeck] matchNum:2];
+    }
+    return _game;
+
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -37,47 +46,50 @@
     return self;
 }
 
+@synthesize cardViews = _cardViews;
+- (NSMutableArray *)cardViews
+{
+    if (!_cardViews) {
+        _cardViews = [NSMutableArray arrayWithCapacity:self.numberOfCards];
+        for (SetCard *card in self.game.cards) {
+            UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                                                  action:@selector(selectSetCard:)];
+            
+            [card.view addGestureRecognizer:tap];
+            
+            [_cardViews addObject:card.view];
+        }
+    }
+    return _cardViews;
+}
+
+
 - (void)viewDidLoad{
     [super viewDidLoad];
-//    for (UIButton *button in self.cardButtons) {
-//        unsigned long cardIndex = [self.cardButtons indexOfObject:button];
-//        SetCard *card = (SetCard *)[self.game cardAtIndex:cardIndex];
-//        [button setAttributedTitle:[DrawSetCard_Attribute_ setCardContent:card] forState:UIControlStateNormal];
-//    }
+
 }
 
 - (void)setup{
-    
+    self.numberOfCards = 12;
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+        self.maxCardSize = CGSizeMake(240.0, 240.0);
+    } else {
+        self.maxCardSize = CGSizeMake(120.0, 120.0);
+    }
 }
 
-- (IBAction)touchStartButton:(id)sender{
 
+- (void)selectSetCard:(UITapGestureRecognizer *)gesture{
+    NSUInteger index = [self.cardViews indexOfObject:gesture.view];
+    [self.game chooseCardAtIndex:index];
+    [self updateUI];
 }
 
 - (void)updateUI{
-//    for (UIButton *button in self.cardButtons) {
-//        Card *card = [self.game cardAtIndex:[self.cardButtons indexOfObject:button]];
-//        if(card.isChosen)
-//        {
-//            [button setBackgroundColor:[UIColor lightGrayColor]];
-//        }
-//        else{
-//            [button setBackgroundColor:[UIColor whiteColor]];
-//        }
-//    }
-//    [self.MatchInfo setText:[NSString stringWithFormat:@"%@", self.game.matchDetail]];
-//    
+    [super updateUI];
+ 
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
